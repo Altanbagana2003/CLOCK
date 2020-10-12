@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --center-border: #ecef7f7;
+    --center-bg: #fff;
+    --clock-bg: #fff;
+    --h-bg: #e5e9f2;
+    --m-bg: #b4c0d5;
+    --s-bg: #e2aab8;
+    --bg: #fff;
+}
+[data-mode="dark"] {
+    --center-border: #202020;
+    --center-bg: #333333;
+    --clock-bg: #201e23;
+    --h-bg: #383838;
+    --m-bg: #454544;
+    --s-bg: #e2aab8;
+    --bg: #151216;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: var(--bg);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 700px;
+}
+.out-circle {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 10px 20px  rgb(229, 211, 236);
+    display: flex;
+    align-items: center;
+    background: var(--bg);
+    justify-content: center;
+}
+.center-circle {
+    width: 40px;
+    height: 40px;
+    background: var(--center-bg);
+    border: 1px solid var(--center-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.center-dot {
+    background:rgb(229, 211, 236);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+}
+.urt-zuu {
+    width: 5px;
+    height: 140px;
+    background: var(--s-bg);
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 2px);
+    transform-origin: top center;
+    transform: rotate(50deg);
+}
+.dund-zuu {
+    width: 10px;
+    height: 120px;
+    background: var(--m-bg);
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 2px);
+    transform-origin: top center;
+    transform: rotate(100deg);
+}
+.bogino-zuu {
+    width: 10px;
+    height: 90px;
+    background: var(--h-bg);
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 2px);
+    transform-origin: top center;
+    transform: rotate(-20deg);
+}
+.mode {
+    background: url(/sun.png) ;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 240px;
+}
+.mode:active {
+    opacity: 0.8;
+}
+
+[data-mode="dark"] .mode {
+    background: url(/moon.png);
+    background-size: cover;
+}

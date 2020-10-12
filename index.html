@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" [data-mode="dark"]>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="out-circle">
+            <div class="mode" onclick="toggleTheme()"></div>
+            <div class="urt-zuu"></div>
+            <div class="dund-zuu"></div>
+            <div class="bogino-zuu"></div>
+            <div class="center-circle">
+            <div class="center-dot"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let darkMode = false;
+        function toggleTheme() {
+            if (darkMode) {
+                darkMode = false;
+            } else {
+                darkMode = true;
+            }
+            document.documentElement.setAttribute('data-mode', darkMode ? 'dark' : '');
+        }
+        var inc = 1000;
+
+clock();
+
+function clock() {
+  const date = new Date();
+
+  const hours = ((date.getHours() + 11) % 12 + 1);
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  
+  const hour = hours * 30;
+  const minute = minutes * 6;
+  const second = seconds * 6;
+  
+  document.querySelector('.bogino-zuu').style.transform = `rotate(${hour}deg)`
+  document.querySelector('.dund-zuu').style.transform = `rotate(${minute}deg)`
+  document.querySelector('.urt-zuu').style.transform = `rotate(${second}deg)`
+}
+
+setInterval(clock, inc);
+    </script>
+</body>
+</html>
